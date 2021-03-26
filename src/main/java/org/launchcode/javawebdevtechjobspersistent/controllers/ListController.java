@@ -16,7 +16,7 @@ import org.launchcode.javawebdevtechjobspersistent.models.JobData;
 import java.util.HashMap;
 
 @Controller
-@RequestMapping(value = "list")
+@RequestMapping("list")
 public class ListController {
 
     @Autowired
@@ -38,14 +38,14 @@ public class ListController {
 
     }
 
-    @RequestMapping("")
+    @GetMapping
     public String list(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
         model.addAttribute("skills", skillRepository.findAll());
         return "lists/list";
     }
 
-    @RequestMapping(value = "jobs")
+    @GetMapping("jobs")
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam String value) {
         Iterable<Job> jobs;
         if (column.toLowerCase().equals("all")){

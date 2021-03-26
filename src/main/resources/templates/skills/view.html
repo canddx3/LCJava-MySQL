@@ -12,7 +12,7 @@
     <p th:text="${'Description: ' + skills.description}"></p>
     <p> Jobs:
         <ul>
-            <li th:each="job : ${skill.jobs}">
+            <li th:each="job : ${skills.jobs}">
                 <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
             </li>
         </ul>
