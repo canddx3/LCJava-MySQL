@@ -38,7 +38,7 @@
             <td>
                 <p>
                     Job Id:
-                    <a th:href="@{'jobs/view/' + ${job.id}}" th:text="${job.id}"></a>
+                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>
                 </p>
                 <p th:text="${'Name: ' + job.name}"></p>
                 <p>
